@@ -39,6 +39,8 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'simple_form', '~> 4.0.1'
 gem 'record_tag_helper', '~> 1.0'
 gem 'punching_bag', '~> 0.6.0'
+gem 'omniauth-google-oauth2', '~> 0.5.3'
+gem 'activerecord-session_store', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'sqlite3','~>1.3.13'
@@ -52,6 +54,7 @@ group :development do
   gem 'listen','~>3.1.5'
   gem 'spring','~>2.0.2'
   gem 'spring-watcher-listen','~>2.0.1'
+  gem 'dotenv', '~> 2.5'
 end
 
 group :test do
