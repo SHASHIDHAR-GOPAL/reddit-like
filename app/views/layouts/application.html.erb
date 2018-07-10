@@ -34,19 +34,6 @@
     <%= content_tag(:div, msg, class: "alert alert-info") %>
   <% end %>
 
-  <div class="btn-group pull-right">
-    <button type="button" class="btn btn-danger">Sort by </button>
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="caret"></span>
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="">Recent</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="">Trending</a></li>
-    </ul>
-  </div>
-
   <div id="content" class="col-md-9 center-block">
     <%= yield %>
   </div>
