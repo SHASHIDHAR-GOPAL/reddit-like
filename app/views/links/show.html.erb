@@ -3,6 +3,11 @@
     <small>Submitted by <%= @link.user.email %></small>
     <span class = "pull-right" ><small>No. of views: <%= @link.hits %></small></span>
   </h1>
+
+  <div>
+    <label id="link-share"><%= @link.url %></label>
+    <button onclick="share()" class="btn btn-danger btn-sm">Share</button>
+  </div>
 </div>
 
 <% if @link.user == current_user -%>
@@ -39,3 +44,11 @@
   <br>
   <%= f.submit "Add Comment", class: "btn btn-primary" %>
 <% end %>
+
+<script type="text/javascript">
+  function share() {
+      window.getSelection().selectAllChildren(document.getElementById("link-share"));
+      document.execCommand("copy");
+      alert("Copied to clipboard");
+  }
+</script>
