@@ -41,6 +41,7 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'punching_bag', '~> 0.6.0'
 gem 'omniauth-google-oauth2', '~> 0.5.3'
 gem 'activerecord-session_store', '~> 1.1', '>= 1.1.1'
+gem 'social-share-button', '~> 1.1.0'
 
 group :development, :test do
   gem 'sqlite3','~>1.3.13'
