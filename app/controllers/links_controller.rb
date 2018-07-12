@@ -10,7 +10,7 @@ class LinksController < ApplicationController
     else
       @links = Link.all.sort_by.reverse_each
     end
-  endheroku
+  end
 
   # GET /links/1
   # GET /links/1.json
