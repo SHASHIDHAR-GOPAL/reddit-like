@@ -4,9 +4,9 @@
     <span class = "pull-right" ><small>No. of views: <%= @link.hits %></small></span>
   </h1>
 
-  <div>
+  <div aria-disabled="true" aria-dropeffect="copy">
     <label id="link-share"><%= @link.url %></label>
-    <button onclick="share()" class="btn btn-danger btn-sm">Share</button>
+    <button onclick="share()" class="btn btn-danger btn-sm">Copy</button>
   </div>
 </div>
 

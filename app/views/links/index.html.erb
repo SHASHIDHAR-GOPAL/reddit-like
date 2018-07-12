@@ -2,16 +2,16 @@
   <button type="button" class="btn btn-danger">Sort by </button>
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
+    <span class="sr-only"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="">Recent</a></li>
+    <li><%= link_to "Recent" %></li>
     <li role="separator" class="divider"></li>
-    <li><a href="">Trending</a></li>
+    <li><%= link_to "Trending" %></li>
   </ul>
 </div>
 
-<% @links.sort_by.reverse_each do |link| %>
+<% @links.each do |link| %>
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %><br>

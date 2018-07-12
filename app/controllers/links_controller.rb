@@ -5,8 +5,12 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
-  end
+    if params[:sort_by] == "Trending"
+      @links = Link.sort_by_popularity("DESC")
+    else
+      @links = Link.all.sort_by.reverse_each
+    end
+  endheroku
 
   # GET /links/1
   # GET /links/1.json
