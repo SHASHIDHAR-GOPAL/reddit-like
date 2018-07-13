@@ -5,11 +5,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    if params[:sort_by] == "Trending"
-      @links = Link.sort_by_popularity("DESC")
-    else
-      @links = Link.all.sort_by.reverse_each
-    end
+    @links = Link.all.sort.reverse_each
   end
 
   # GET /links/1

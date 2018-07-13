@@ -7,7 +7,7 @@
   <div aria-disabled="true" aria-dropeffect="copy">
     <label id="link-share"><%= @link.url %></label>
     <button onclick="share()" class="btn btn-danger btn-sm">Copy</button>
-    <%= social_share_button_tag(@link.title.to_s.upcase! + "\n" + @link.url , :url => " ", :popup => "true") %>
+    <%= social_share_button_tag(@link.title.to_s.upcase! + "\n" + @link.url.to_s , :url => " ", :popup => "true") %>
   </div>
 </div>
 
