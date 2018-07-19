@@ -6,7 +6,7 @@
 
   <div aria-disabled="true" aria-dropeffect="copy">
     <label id="link-share"><%= @link.url %></label>
-    <button onclick="share()" class="btn btn-danger btn-sm">Copy</button>
+    <button onclick="copy()" class="btn btn-danger btn-sm">Copy</button>
     <%= social_share_button_tag(@link.title.to_s.upcase! + "\n" + @link.url.to_s , :url => " ", :popup => "true") %>
   </div>
 </div>
@@ -14,7 +14,7 @@
 <% if @link.user == current_user -%>
   <div class="btn-group pull-right">
     <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-    <%= link_to 'Delete', @link, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+    <%= link_to 'Delete', @link, method: :delete, class: "btn btn-default" %>
   </div>
 <% end %>
 
@@ -38,18 +38,26 @@
 <div id="comments">
   <%= render :partial => @link.comments %>
 </div>
-<%= simple_form_for [@link, Comment.new] do |f| %>
+<%= simple_form_for [@link, Comment.new] do |form| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
+    <%= form.text_area :body, class: "form-control", style: "resize: none", wrap: "off" %>
   </div>
   <br>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+  <%= form.submit "Add Comment", class: "btn btn-primary", onclick: "return validateComments()" %>
 <% end %>
 
 <script type="text/javascript">
-  function share() {
+  function copy() {
       window.getSelection().selectAllChildren(document.getElementById("link-share"));
       document.execCommand("copy");
-      alert("Copied to clipboard");
+  }
+  
+  function validateComments() {
+      let comment = document.getElementById("comment_body").value;
+      if (comment === "") {
+          alert("Comment must be filled out");
+          return false;
+      }
+      return true;
   }
 </script>

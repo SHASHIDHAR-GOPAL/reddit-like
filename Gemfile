@@ -44,7 +44,7 @@ gem 'activerecord-session_store', '~> 1.1', '>= 1.1.1'
 gem 'social-share-button', '~> 1.1.0'
 
 group :development, :test do
-  gem 'sqlite3','~>1.3.13'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -73,7 +73,7 @@ end
 
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
-  #gem 'pg', '~> 1.0.0'
+  gem 'pg', '~> 1.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
